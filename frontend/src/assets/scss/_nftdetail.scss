@@ -1,0 +1,226 @@
+.nftdetail {
+  --dash-padding: 13rem;
+  --padding-bottom: 100px;
+
+  padding-bottom: var(--padding-bottom);
+  font-family: "PP Gosha Sans", sans-serif;
+
+  .buttoncontainer {
+    margin-top: 12.5rem;
+    font-family: "PP Gosha Sans", sans-serif;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .btnStyle {
+    background-color: rgba(72, 45, 54, 0.31);
+    border-color: white;
+    margin-right: 2rem;
+    height: fit-content;
+    font-size: large;
+  }
+
+  .btnStyle-right {
+    background: rgba(238, 44, 27, 0.08);
+    border: 1px solid #ee2c1b;
+    color: #ee2c1b;
+    height: fit-content;
+    font-size: large;
+  }
+
+  .btnStyle-right:hover {
+    background: rgba(238, 44, 27, 0.08);
+    border: 1px solid white;
+    color: white;
+    height: fit-content;
+    font-size: large;
+  }
+
+  .btnStyle:hover {
+    background-color: rgba(254, 112, 36, 0.25);
+    border-color: #fe7024;
+  }
+
+  .header-nftdetail {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin-top: 2rem;
+  }
+
+  .extra-btn {
+    position: absolute;
+    top: 7px;
+    left: 5px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: rgba(254, 112, 36, 0.36);
+    border: 2px solid rgba(254, 112, 36, 1);
+    margin-right: 8px;
+  }
+
+  .extra-btn:last-child {
+    margin-right: 0; /* Remove margin from the last button */
+  }
+
+  .extra-btn:focus {
+    outline: none; /* Remove default focus outline */
+  }
+
+  .nft-card {
+    flex: 0.45;
+    text-align: left;
+    align-items: center;
+    justify-content: center;
+    background: rgba(254, 112, 36, 0.05);
+    padding: 1rem;
+    border: 1px solid rgba(243, 110, 35, 0.2);
+    border-radius: 12px;
+    height: min-content;
+  }
+
+  .nft-card-image {
+    margin-top: 8px;
+    margin-left: 2px;
+    width: 100%;
+  }
+
+  .buy-now-btn {
+    width: 100%;
+    border-radius: 5px;
+    margin-top: 1.5rem;
+    height: 2.5rem;
+    padding: 0.25rem;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-size: medium;
+    background: linear-gradient(
+      90.01deg,
+      rgba(238, 44, 27, 0.1) 0.01%,
+      rgba(243, 110, 35, 0.1) 99.99%
+    );
+    border: 1px solid #fe7024;
+  }
+
+  .nft-information {
+    flex: 1;
+    padding-left: 1.5rem;
+    font-size: 1.2rem;
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .nft-info-heading {
+    font-size: xx-large;
+    margin-bottom: 1rem;
+  }
+
+  .nft-detail-heading {
+    margin-top: 1rem;
+    font-size: larger;
+  }
+
+  .nft-info-detail {
+    margin-top: 1rem;
+    font-weight: 400;
+    font-size: medium;
+    text-align: justify;
+  }
+
+  .nft-info-collection-info {
+    display: flex;
+    flex-direction: row;
+    font-size: medium;
+    height: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding-top: 0.25rem;
+  }
+
+  .slot-1 {
+    background: linear-gradient(
+      90.01deg,
+      rgba(238, 44, 27, 0.25) 0.01%,
+      rgba(243, 110, 35, 0.25) 99.99%
+    );
+    border: 1px solid #ee2c1b;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    border-radius: 7px 0px 0px 7px;
+  }
+
+  .slot-2 {
+    background: linear-gradient(
+      90.01deg,
+      rgba(238, 44, 27, 0.05) 0.01%,
+      rgba(243, 110, 35, 0.05) 99.99%
+    );
+    border: 2px solid rgba(238, 44, 27, 0.1);
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    border-radius: 0px 7px 7px 0px;
+  }
+
+  .nft-detail-table {
+    overflow-x: auto;
+  }
+
+  table {
+    margin-top: 10px;
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 15px;
+    overflow-x: auto; /* Merge cell borders */
+  }
+
+  td {
+    padding: 8px 12px;
+    text-align: left;
+  }
+
+  td:first-child {
+    width: 30%; /* 1/4th of the table width */
+  }
+
+  .table-row {
+    font-size: medium;
+    background: rgba(243, 110, 35, 0.05);
+    border: 2px solid rgba(243, 110, 35, 0.1);
+    height: 2rem;
+  }
+
+  @media screen and (max-width: 768px) {
+    .buttoncontainer {
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .btnStyle {
+      width: 100%;
+      margin-top: 1rem;
+    }
+
+    .btnStyle-right {
+      width: 100%;
+      margin-top: 1rem;
+    }
+
+    .header-nftdetail {
+      flex-direction: column;
+    }
+
+    .nft-card {
+      width: 100%;
+    }
+
+    .nft-information {
+      margin-left: -1.5rem;
+    }
+
+    .nft-info-collection-info {
+      flex-direction: column;
+      width: 100%;
+    }
+  }
+}

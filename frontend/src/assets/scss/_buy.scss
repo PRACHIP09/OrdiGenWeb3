@@ -1,0 +1,350 @@
+.buy {
+  --m: 160px;
+  margin: 0 var(--buyMt);
+  &-content {
+    @include md {
+      text-align: center;
+    }
+    & h2 {
+      @include font-60;
+      color: transparent;
+      background: $mainBg;
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 30px;
+      @include lg {
+        margin-bottom: 20px;
+      }
+    }
+    & p {
+      @include font-20;
+      padding-right: 65px;
+      @include xxl {
+        padding-right: 0 !important;
+      }
+    }
+    & .p1 {
+      padding-bottom: 10px;
+    }
+  }
+  &-btn {
+    margin-top: 40px;
+    background: $mainBg;
+    border-radius: 20px;
+    padding: 2px;
+    max-width: 678px;
+    @include xxl {
+      margin-top: 32px;
+    }
+    &-inner {
+      background-color: $body-bg;
+      border-radius: 20px;
+      padding: 10px 10px 10px 27px;
+      @include xxl {
+        padding: 10px;
+      }
+      @include sm {
+        padding: 20px;
+      }
+      @include sm {
+        flex-wrap: wrap;
+        text-align: center;
+      }
+      & p {
+        @include font-20;
+        @include xl {
+          font-size: 16px;
+        }
+        @include lg {
+          padding-left: 8px;
+        }
+        @include md {
+          font-size: 18px;
+        }
+        @include sm {
+          margin-bottom: 20px;
+        }
+        & a {
+          color: $text;
+          text-decoration: underline !important;
+          &:hover {
+            color: $primary;
+          }
+        }
+      }
+    }
+  }
+  &-connect {
+    position: relative;
+    z-index: 1;
+    font-family: "PP Gosha Sans";
+    font-weight: 400;
+    max-width: 520px;
+    padding: 24px;
+    border: 1px solid $border;
+    border-radius: 16px;
+    background: linear-gradient(
+      90deg,
+      rgba(238, 44, 27, 0.05) 0.01%,
+      rgba(243, 110, 35, 0.05) 99.99%
+    );
+    // backdrop-filter: blur(12px);
+    @include md {
+      margin-top: 30px;
+      max-width: 620px;
+    }
+    @include sm {
+      padding: 14px;
+    }
+    &-single {
+      padding: 22px 32px;
+      margin-bottom: 12px;
+      border-radius: 16px;
+      border: 1px solid $border;
+      background: rgba(238, 44, 27, 0.08);
+      position: relative;
+      @include ssm {
+        padding: 15px 20px;
+      }
+      &-left {
+        & P {
+          @include font-16;
+          margin-bottom: 24px;
+        }
+        & input {
+          font-size: 32px;
+          line-height: calc(32px / 32px);
+          color: #f1f1f7;
+          width: 110px;
+        }
+        & .second-span {
+          @include font-22;
+        }
+      }
+      & .p2 {
+        font-size: 14px;
+        font-family: "PP Gosha Sans";
+      }
+      &-right {
+        padding-bottom: 6px;
+        & .buy-network {
+          & img {
+            --size2: 30px;
+            width: var(--size2);
+            height: var(--size2);
+            border-radius: 16px;
+            flex: 0 0 auto;
+            margin-right: 8px;
+            @include sm {
+              width: 34px;
+            }
+          }
+          & span {
+            color: #f1f1f7;
+          }
+        }
+      }
+      & .balance {
+        font-size: 14px;
+        line-height: calc(16px / 14px);
+        color: #a29ba1;
+        margin-top: 8px;
+      }
+    }
+    & .data-icon {
+      border: 2px solid $primary;
+      border-radius: 50%;
+      backdrop-filter: blur(25px);
+      position: absolute;
+      z-index: 2;
+      --width: 52px;
+      width: var(--width);
+      height: var(--width);
+      left: 50%;
+      top: 28px;
+      transform: translate(-50%, -50%);
+      margin-top: -36px;
+      background: #2d2027;
+      @include ssm {
+        top: 52%;
+        --width: 48px;
+      }
+    }
+    & .last-padding {
+      padding: 11px 21px !important;
+    }
+    &-btn {
+      margin-top: 52px;
+      @include sm {
+        margin-top: 1rem;
+      }
+      & .primary-btn {
+        cursor: auto;
+        width: 100%;
+        display: block;
+        text-align: center;
+        margin-top: 12px;
+        padding: 20px 24px;
+        @include font-16;
+        border-radius: 1rem;
+        @include ssm {
+          padding: 14px 24px;
+        }
+      }
+    }
+  }
+  &-exchange {
+    padding: 4px;
+    padding-right: 14px;
+    border: none;
+    border-radius: 32px;
+    margin-bottom: 16px;
+    margin-top: 32px;
+    border: 1px solid rgba(140, 140, 140, 0.2) !important;
+    background-color: rgba(140, 140, 140, 0.1) !important;
+    display: flex;
+    align-items: center;
+    &:last-child {
+      margin-bottom: 0;
+      margin-top: 0;
+    }
+    &::after {
+      content: "";
+      display: inline-block;
+      margin-left: 0.255em;
+      vertical-align: 0.255em;
+      border-top: 0.3em solid;
+      border-right: 0.3em solid transparent;
+      border-bottom: 0;
+      border-left: 0.3em solid transparent;
+    }
+    & img {
+      --size2: 30px;
+      width: var(--size2);
+      height: var(--size2);
+      border-radius: 16px;
+      flex: 0 0 auto;
+      margin-right: 8px;
+      @include sm {
+        width: 34px;
+      }
+    }
+    & span {
+      padding-right: 8px;
+      color: #f1f1f7;
+    }
+  }
+  &-modal {
+    --bs-modal-width: 450px;
+    background: rgba(217, 217, 217, 0.01);
+    backdrop-filter: blur(110px);
+    input {
+      border-radius: 10px;
+      border: 1px solid rgba(238, 44, 27, 0.1);
+      background: linear-gradient(
+        90deg,
+        rgba(238, 44, 27, 0.05) 0.01%,
+        rgba(243, 110, 35, 0.05) 99.99%
+      );
+      color: $white;
+      font-size: 14px;
+      line-height: calc(22px / 14px);
+      font-weight: 300;
+      padding: 10px 16px;
+      box-shadow: 0 0 0;
+      margin-bottom: 28px;
+      position: sticky;
+      top: 0;
+      left: 0;
+      width: 100%;
+      &::placeholder {
+        color: $white;
+      }
+      @include sm {
+        margin-bottom: 20px;
+      }
+    }
+    & .items {
+      --grid-count: 3;
+      grid-template-columns: repeat(var(--grid-count), minmax(0, 1fr));
+      @include ssm {
+        --grid-count: 2;
+      }
+      & li {
+        border-radius: 10px;
+        padding: 13px 14px;
+        font-size: 17px;
+        line-height: calc(20px / 17px);
+        color: $white;
+        cursor: pointer;
+        border: 1px solid rgba(238, 44, 27, 0.1);
+        background: linear-gradient(
+          90deg,
+          rgba(238, 44, 27, 0.05) 0.01%,
+          rgba(243, 110, 35, 0.05) 99.99%
+        );
+        &:hover {
+          border: 1px solid rgba($color: $secondary, $alpha: 0.4);
+          background: linear-gradient(
+            90deg,
+            rgba(238, 44, 27, 0.25) 0.01%,
+            rgba(243, 110, 35, 0.25) 99.99%
+          );
+        }
+        @include sm {
+          padding: 10px 14px;
+          font-size: 14px;
+        }
+        & img {
+          --width: 30px;
+          width: var(--width);
+          height: var(--width);
+          object-fit: contain;
+        }
+      }
+      &-token {
+        max-height: 400px;
+        overflow: auto;
+        padding-right: 10px;
+        & li {
+          cursor: pointer;
+          @include transition;
+          &:hover {
+            color: $secondary;
+          }
+          border-bottom: 1px solid rgba($color: $white, $alpha: 0.06);
+          padding-bottom: 12px;
+          margin-bottom: 12px;
+          & img {
+            --width: 25px;
+            width: var(--width);
+            height: var(--width);
+            object-fit: contain;
+          }
+        }
+      }
+    }
+  }
+}
+
+.modal {
+  &-header {
+    border: none;
+    & .btn-close {
+      filter: brightness(0) invert(1);
+      opacity: 1;
+    }
+  }
+  &-title {
+    font-size: 18px;
+    font-weight: 400;
+    color: $white;
+    margin-bottom: 0;
+  }
+  &-content {
+    border-radius: 16px;
+    border: 1px solid rgba(238, 44, 27, 0.1);
+    background-color: #1b1820;
+  }
+}

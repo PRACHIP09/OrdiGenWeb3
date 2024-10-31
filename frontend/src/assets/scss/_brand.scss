@@ -1,0 +1,74 @@
+.brand {
+    position: relative;
+    z-index: 2;
+    bottom: calc(var(--main-height) / 2);
+    --main-height: 118px;
+    margin-bottom: -60px;
+    &-border {
+        background: $mainBg;
+        border-radius: 20px;
+        padding: 2px;
+    }
+    &-inner {
+        background-color: $body-bg;
+        padding: 34px 50px;
+        border-radius: 20px;
+        @include xl {
+            padding: 32px 30px;
+        }
+        @include md {
+            padding: 32px 20px;
+            flex-wrap: wrap;
+        }
+        @include sm {
+            padding: 20px;
+        }
+        & p {
+            color: $primary;
+            @include font-22;
+            width: max-content;
+            flex: 0 0 auto;
+        }
+    }
+    &-logos {
+        --grid-count: 6;
+        padding-left: 10px;
+        grid-template-columns: repeat(var(--grid-count), minmax(0, 1fr));
+        @include md {
+            padding-left: 0;
+            margin-top: 16px;
+            grid-row-gap: 1rem;
+            --grid-count: 3;
+            width: 100%;
+        }
+        // @include ssm {
+        //     --grid-count: 2;
+        // }
+    }
+    &-logo {
+        text-align: center;
+        & img {
+            width: 127px;
+            @include xls {
+                width: 90px;
+            }
+            @include lgs {
+                width: 80px;
+            }
+            @include sm {
+                width: 90px;
+            }
+            @include ssm {
+                width: 70px;
+            }
+        }
+        &:not(:last-child) {
+            border-right: 1px solid rgba($color: $white, $alpha: .10);
+        }
+        &:nth-child(3n+3) {
+            @include md {
+                border-right-width: 0;
+            }
+        }
+    }
+}

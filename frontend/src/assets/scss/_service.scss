@@ -1,0 +1,149 @@
+.service {
+    --item-margin: 120px;
+    @include xls {
+        --item-margin: 90px;
+    }
+    @include lgs {
+        --item-margin: 80px;
+    }
+    @include mds {
+        --item-margin: 50px;
+    }
+    @include sm {
+        --item-margin: 60px;
+    }
+    &-row {
+        margin-bottom: calc(var(--item-margin) * -1);
+    }
+    & .section-title {
+        margin-bottom: 130px;
+        @include mds {
+            margin-bottom: 80px;
+        }
+        @include sm {
+            margin-bottom: 60px;
+        }
+    }
+    &-card {
+        padding-left: 73px;
+        margin-bottom: var(--item-margin);
+        min-height: 384px;
+        position: relative;
+        z-index: 1;
+        display: flex;
+        @include xxls {
+            padding-left: 40px;
+        }
+        @include xls {
+            padding-left: 35px;
+        }
+        @include lgs {
+            padding-left: 15px;
+            min-height: 330px;
+        }
+        @include mds {
+            min-height: 300px;
+            padding-left: 0;
+        }
+        @include sm {
+            padding-left: 20px;
+            min-height: 224px;
+        }
+        &-icon {
+            --size: 130px;
+            width: var(--size);
+            height: var(--size);
+            border: 1px solid rgba(255, 255, 255, 0.10);
+            border-radius: 50%;
+            position: absolute;
+            z-index: 3;
+            top: calc(var(--size) / 2 * -1);
+            left: calc(var(--size) / 2 * -1);
+            backdrop-filter: blur(12px);
+            background: transparent;
+            padding: 3px;
+            @include xxls {
+                --size: 100px;
+                top: -61px;
+                left: -11px;
+            }
+            @include xls {
+                --size: 120px;
+                left: -14px;
+            }
+            @include lgs {
+                --size: 90px;
+                left: -24px;
+            }
+            @include mds {
+                --size: 60px;
+                margin-left: 12px;
+            }
+            @include sm {
+                --size: 70px;
+                margin-left: 12px;
+            }
+            & svg {
+                @include xxls {
+                    width: 40px;
+                    height: auto;
+                }
+                @include mds {
+                    width: 24px;
+                }
+                @include sm {
+                    width: 30px;
+                }
+            }
+        }
+        &-inner {
+            overflow: hidden;
+            background: $service-card;
+            border-radius: 18px;
+            position: relative;
+            z-index: 1;
+            padding: 4px;
+            transition: all 2s ease;
+            &:hover {
+                background-image: linear-gradient(158deg, #F03D1E -184.64%, #0F1520 98.93%), $mainBg;
+                background-origin: border-box;
+                background-clip: content-box, border-box;
+                & .service-card-icon {
+                    border: 3px solid $secondary;
+                }
+            }
+            & h3 {
+                padding-left: 71px;
+                margin-bottom: 30px;
+                @include font-32;
+                @include xxls {
+                    padding-left: 50px;
+                }
+                @include xls {
+                    padding-left: 60px;
+                }
+                @include lgs {
+                    padding-left: 40px;
+                    margin-bottom: 20px;
+                }
+                @include md {
+                    margin-bottom: 18px;
+                    font-size: 28px;
+                    padding-left: 0;
+                }
+                @include sm {
+                    font-size: 24px;
+                }
+                @include ssm {
+                    font-size: 22px;
+                }
+            }
+        }
+        &-wrapper {
+            padding: 37px;
+            @include xxl {
+                padding: 23px;
+            }
+        }
+    }
+}

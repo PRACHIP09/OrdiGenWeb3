@@ -1,0 +1,47 @@
+name: Push-to-Prod-Server
+
+on: 
+  push:
+    branches:    
+      - main 
+
+jobs:
+  deploy:
+    name: Push to Prod Server
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout the code
+        uses: actions/checkout@v1
+      
+      - name: Use Node.js 16
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+    
+      - name: Build
+        run: |
+          cd frontend
+          cat > .env << EOF
+          ${{ secrets.ENVIRONMENT_FRONTEND }}
+          EOF
+          npm install
+          npm run build
+          cd ..
+
+      - name: Configure
+        run: |
+          cd backend
+          cat > .env << EOF
+          ${{ secrets.ENVIRONMENT }}
+          EOF
+          npm install
+
+      - name: Deploy to my Server
+        uses: easingthemes/ssh-deploy@v2.1.5
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.EC2_SSH_KEY }}
+          SOURCE: "./backend/"
+          REMOTE_HOST: "185.62.58.46"
+          REMOTE_USER: "client_27280_3"
+          TARGET: "/home/client_27280_3/backend"

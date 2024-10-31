@@ -1,0 +1,30 @@
+{
+  "solidity.telemetry": true,
+  "git.openRepositoryInParentFolders": "never",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "liveServer.settings.donotShowInfoMsg": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "[solidity]": {
+    "editor.defaultFormatter": "NomicFoundation.hardhat-solidity"
+  },
+  "workbench.startupEditor": "none",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "typescript.preferences.importModuleSpecifier": "non-relative",
+  "diffEditor.ignoreTrimWhitespace": false,
+  "redhat.telemetry.enabled": true,
+  "extensions.ignoreRecommendations": true,
+  "prettier.singleQuote": false,
+  "prettier.jsxSingleQuote": true,
+  "git.autofetch": true,
+  "typescript.format.semicolons": "insert"
+}

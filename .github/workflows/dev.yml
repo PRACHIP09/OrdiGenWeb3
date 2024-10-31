@@ -1,0 +1,47 @@
+name: Push-to-Test-Server
+
+on: 
+  push:
+    branches:    
+      - testnet 
+
+jobs:
+  deploy:
+    name: Push to Test Server
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout the code
+        uses: actions/checkout@v1
+      
+      - name: Use Node.js 16
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+    
+      - name: Build
+        run: |
+          cd frontend
+          cat > .env << EOF
+          ${{ secrets.ENVIRONMENT_FRONTEND }}
+          EOF
+          npm install
+          npm run build
+          cd ..
+
+      - name: Configure
+        run: |
+          cd backend
+          cat > .env << EOF
+          ${{ secrets.ENVIRONMENT_TESTNET }}
+          EOF
+          npm install
+
+      - name: Deploy to my Server
+        uses: easingthemes/ssh-deploy@v2.1.5
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.EC2_SSH_KEY_TESTNET }}
+          SOURCE: "./backend/"
+          REMOTE_HOST: "185.62.57.27"
+          REMOTE_USER: "client_27280_4"
+          TARGET: "/home/client_27280_4/backend"
